@@ -182,17 +182,6 @@ table_elisa_norm <- normality_results_wide %>%
               table.font.size = 12,) %>% 
   fmt_number(decimals = 3)
 
-# Color any cell in the table that is <0.05
-# for (column in times_to_test) {
-#  table_elisa_norm <- table_elisa_norm %>%
-#    tab_style(
-#      style = cell_fill(color = "#FF6565"),
-#      locations = cells_body(
-#        columns = all_of(column),
-#        rows = .data[[column]] < 0.05
-#      )
-#    )
-#}
 
 print(table_elisa_norm) # Note white & blue @ ZT 15 are non-parametric per the Shapiro-Wilk test
 
