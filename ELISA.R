@@ -166,8 +166,7 @@ normality_results_wide <-
   normality_results_wide[,c(1,2,3,5,6,7,4)] # reordering columns for the table 
 # Table Showing Results
 table_elisa_norm <- normality_results_wide %>% 
-  select(-method) %>% 
-  select(-variable) %>% 
+  select(treatment,"14:00:00","19:00:00","23:00:00","07:00:00") %>% 
   mutate(treatment = str_to_sentence(treatment)) %>% 
   gt(groupname_col = "Treatment",
      row_group_as_column = TRUE) %>% 
