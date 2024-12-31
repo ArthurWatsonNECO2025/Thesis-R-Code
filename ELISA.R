@@ -303,4 +303,9 @@ bar_elisa <- sum_bar +
             aes(x = x, y = y, label = "*"),
             inherit.aes = FALSE)
 
-print(bar_elisa)
+ggsave(bar_elisa, # save graph
+       filename = "bar_elisa.pdf",
+       device = "pdf",
+       width = 8,
+       height = 5,
+       units = "in")
