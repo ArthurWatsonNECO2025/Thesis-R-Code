@@ -206,20 +206,20 @@ elisa_summary <- elisa_clean_wide %>%
 #### Statistical Analysis ####
 # Parametric tests
 elisa_clean %>% 
-  filter(time == "07:00:00") %>% 
+  filter(time == "07:00:00") %>% #ZT23
   t.test(concentration ~ treatment, data = .) #p=8.113e-05
 
 elisa_clean %>% 
-  filter(time == "14:00:00") %>% 
+  filter(time == "14:00:00") %>% #ZT06
   t.test(concentration ~ treatment, data = .) #p = 0.03065
 
 elisa_clean %>% 
-  filter(time == "19:00:00") %>% 
+  filter(time == "19:00:00") %>% #ZT11
   t.test(concentration ~ treatment, data = .) #p = 7.196e-05
 
 # Nonparametric tests
 elisa_clean %>% 
-  filter(time == "23:00:00") %>% 
+  filter(time == "23:00:00") %>% #ZT15
   wilcox.test(concentration ~ treatment, data = .) #p=0.06905
 
 #### Graphical Representation ####
